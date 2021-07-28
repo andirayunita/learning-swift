@@ -1,7 +1,7 @@
-// var score = 85
-// var str = "Your score was \(score)"
-// var result = "The test result are here: \(str)"
-// print(result)
+var score = 85
+var str = "Your score was \(score)"
+var result = "The test result are here: \(str)"
+print(result)
 
 // -----------------------------------------
 // SOAL-SOAL ALGORITMA 
@@ -58,9 +58,9 @@
 
 // -----------------------------------------
 
-let colors = Set(["red", "green", "blue"])
-print(colors)
+// let colors = Set(["red", "green", "blue"])
+// print(colors)
 
-let colors2 = Set(["red", "green", "blue", "red", "blue"])
-print(colors2)
+// let colors2 = Set(["red", "green", "blue", "red", "blue"])
+// print(colors2)
 
