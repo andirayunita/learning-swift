@@ -13,15 +13,18 @@ print(food2)
 let food3 = (first: "Pizza", second: "Fried Chicken", last: "Burger")
 print(food3.second)
 
-// dictionaries: have keys & values, using brackets and colons, default
+// dictionaries: have keys & values, using brackets and colons, have default values(not always tho)
 let food4 = [
     "Pizza Hut": "Pizza", 
     "McD": "Fried Chicken", 
     "Burger King": "Burger"
 ]
-if let burgerFood = food4["Burger King"] {
-    print("\"Burger King\" menyajikan \(burgerFood).")
-}
+
+let burgerFood = food4["Burger King", default: "No Burger"]
+print("\"Burger King\" menyajikan \(burgerFood)")
+
+let dominos = food4["Dominos", default: "No Pizza Dominos, just Pizza Hut"]
+print(dominos)
 
 // --------------------------------------
 

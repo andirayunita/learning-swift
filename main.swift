@@ -1,8 +1,3 @@
-var score = 85
-var str = "Your score was \(score)"
-var result = "The test result are here: \(str)"
-print(result)
-
 // -----------------------------------------
 // SOAL-SOAL ALGORITMA 
 // -----------------------------------------
@@ -29,13 +24,13 @@ print(result)
 
 // -----------------------------------------
 
-// let phi: Double = 3.14
-// let jari_jari: Double = 7
-// let tinggi: Double = 24
-// var volume: Double
+let phi: Double = 3.14
+let jari_jari: Double = 7
+let tinggi: Double = 24
+var volume: Double
 
-// volume = phi * jari_jari * jari_jari * tinggi
-// print("Rumus luas volume tabung adalah \(volume)")
+volume = phi * jari_jari * jari_jari * tinggi
+print("Rumus luas volume tabung adalah \(volume)")
 
 // -----------------------------------------
 
@@ -64,3 +59,9 @@ print(result)
 // let colors2 = Set(["red", "green", "blue", "red", "blue"])
 // print(colors2)
 
+// -----------------------------------------
+
+// var score = 85
+// var str = "Your score was \(score)"
+// var result = "The test result are here: \(str)"
+// print(result)
