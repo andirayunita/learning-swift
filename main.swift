@@ -1,5 +1,5 @@
 // -----------------------------------------
-// SOAL-SOAL ALGORITMA 
+print("SOAL-SOAL ALGORITMA") 
 // -----------------------------------------
 
 // let phi: Double = 3.14
