@@ -1,5 +1,5 @@
 // -----------------------------------------
-// SOAL-SOAL ALGORITMA 
+print("SOAL-SOAL ALGORITMA") 
 // -----------------------------------------
 
 // let phi: Double = 3.14
@@ -24,13 +24,13 @@
 
 // -----------------------------------------
 
-let phi: Double = 3.14
-let jari_jari: Double = 7
-let tinggi: Double = 24
-var volume: Double
+// let phi: Double = 3.14
+// let jari_jari: Double = 7
+// let tinggi: Double = 24
+// var volume: Double
 
-volume = phi * jari_jari * jari_jari * tinggi
-print("Rumus luas volume tabung adalah \(volume)")
+// volume = phi * jari_jari * jari_jari * tinggi
+// print("Rumus luas volume tabung adalah \(volume)")
 
 // -----------------------------------------
 
