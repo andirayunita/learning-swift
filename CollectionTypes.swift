@@ -1,15 +1,15 @@
 let opening = "=====The Difference between Array, Set, Tuple, and Dictionaries====="
 print(opening)
 
-// - array: ordered, can have duplicates, can be added & removed, using brackets
+// - array: ordered, can have duplicates, can be added & removed, using brackets, access numerical
 var food = ["Pizza", "Fried Chicken", "Burger"]
 print(food[0])
 
-// - set: inordered, can't have duplicates, unique, can be added & removed, using parentheses & brackets
+// - set: inordered, can't have duplicates, unique, can be added & removed, using parentheses & brackets, can't access numerical
 var food2 = Set(["Pizza", "Fried Chicken", "Burger"])
 print(food2)
 
-// tuple: fixed size, can't be added & removed, using parentheses
+// tuple: fixed size, can't be added & removed, using parentheses, access numerical/names of the items
 let food3 = (first: "Pizza", second: "Fried Chicken", last: "Burger")
 print(food3.second)
 
@@ -78,8 +78,7 @@ let whichDirection = Direction.north
 print("The direction is in the \(whichDirection).")
 
 
-// enums associated values
-
+// enums associated values: additional information about each case
 enum Activity {
     case bored
     case running(destination: String)
@@ -90,8 +89,7 @@ let talking = Activity.talking(topic: "football")
 print(talking)
 
 
-// enums raw values
-
+// enums raw values: attach values to enums, can be created from ints or strings
 enum Planet: Int {
     case mercury
     case venus
