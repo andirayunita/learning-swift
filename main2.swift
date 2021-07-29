@@ -22,3 +22,7 @@ let food4 = [
 if let burgerFood = food4["Burger King"] {
     print("\"Burger King\" menyajikan \(burgerFood).")
 }
+
+// --------------------------------------
+
+// enums
