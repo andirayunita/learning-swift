@@ -1,8 +1,3 @@
-var score = 85
-var str = "Your score was \(score)"
-var result = "The test result are here: \(str)"
-print(result)
-
 // -----------------------------------------
 // SOAL-SOAL ALGORITMA 
 // -----------------------------------------
@@ -39,22 +34,22 @@ print(result)
 
 // -----------------------------------------
 
-// print("Alas = "); let alasInput = readLine()
-// print("Tinggi = "); let tinggiInput = readLine()
+print("Alas = "); let alasInput = readLine()
+print("Tinggi = "); let tinggiInput = readLine()
 
-// // ubah string ke int
-// if let alas = Int(alasInput ?? "0"), let tinggi = Int(tinggiInput ?? "0") {
-//     let keliling = 2 * (alas + tinggi)
-//     let luas = alas * tinggi
+// ubah string ke int
+if let alas = Int(alasInput ?? "0"), let tinggi = Int(tinggiInput ?? "0") {
+    let keliling = 2 * (alas + tinggi)
+    let luas = alas * tinggi
     
-//     print("Alas = \(alas)")
-//     print("Tinggi = \(tinggi)")
-//     print("Keliling = \(keliling)")
-//     print("Luas = \(luas)")
+    print("Alas = \(alas)")
+    print("Tinggi = \(tinggi)")
+    print("Keliling = \(keliling)")
+    print("Luas = \(luas)")
     
-// } else {
-//     print("Input tidak valid.")
-// }
+} else {
+    print("Input tidak valid.")
+}
 
 // -----------------------------------------
 
@@ -64,3 +59,9 @@ print(result)
 // let colors2 = Set(["red", "green", "blue", "red", "blue"])
 // print(colors2)
 
+// -----------------------------------------
+
+// var score = 85
+// var str = "Your score was \(score)"
+// var result = "The test result are here: \(str)"
+// print(result)
