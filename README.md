@@ -1,2 +1,2 @@
 # swift-algorithm-dump
-just repo algorithm syntax in Swift (Playground) from HWS, CWC, and more
+just repo some algos and syntax in Swift (Playground) from HackingWithSwift, CodeWithChris, Dicoding and many more
