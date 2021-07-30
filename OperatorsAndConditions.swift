@@ -2,7 +2,7 @@ print("================================================")
 print("Operators and Conditions")
 print("================================================")
 
-// arithmetic opeators
+// arithmetic operators
 // attention: can’t add(+) an Int and a Double, can’t multiply(*) a Float and an Int, so on
 print("\n====Arithmetic Operators====")
 let firstScore = 12
@@ -172,7 +172,7 @@ print(isAuthenticated ? "Welcome!" : "Who are you?")
 //--------------------------------------------------------------------------------------------
 
 // switch case
-// If you want execution to continue on to the next case, use the fallthrough keyword
+// to execution continue on to the next case, use the fallthrough keyword
 print("\n====Switch Statements====")
 
 let weather = "sunny"
@@ -187,7 +187,29 @@ switch weather {
         fallthrough
     default:
         print("Enjoy your day!")
-} // output: Wear sunscreen. Enjoy your day!
+} 
 
 
+//--------------------------------------------------------------------------------------------
 
+// range operators
+print("\n====Range Operators====")
+
+// half-open range ..< exclude final value
+// closed range ... include final value
+// one-sided range 2... or ...2 
+
+let yourScore = 85
+
+switch yourScore {
+    case 0..<50:
+        print("You get a C, you failed badly.")
+    case 50...80:
+        print("You get a B, not bad.")
+    default:
+        print("You get an A, congrats!")
+}
+
+
+var myFlowers = ["Roses", "Sunflowers", "White Roses", "Baby's-Breath"]
+print(myFlowers[1...])
