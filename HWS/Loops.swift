@@ -3,6 +3,7 @@ print("\t\t\t\t Loops in Swift")
 print("================================================")
 
 // for Loops
+// if don't need temporary constant, use underscore _ 
 print("\n====For Loops====")
 let numbers = 1...4
 for number in numbers {
@@ -99,7 +100,7 @@ print("You had \(count) scores before you got 0.")
 
 
 // exiting multiple loops: using a label at outside loop, 
-// then break label to exit both loops(inner and outer loop)
+// then break label to exit nested loops(inner and outer loops)
 print("\n====Exiting Multiple Loops====")
 
 outerLoop: for i in 1...5 {
@@ -115,12 +116,64 @@ outerLoop: for i in 1...5 {
 }
 
 
+let options = ["up", "down", "left", "right"]
+let secretCombination = ["up", "up", "right"]
+outerLoop: for option1 in options {
+    for option2 in options {
+        for option3 in options {
+            print("In loop")
+            let attempt = [option1, option2, option3]
+
+            if attempt == secretCombination {
+                print("The combination is \(attempt)!")
+                break outerLoop
+            }
+            
+        }
+    }
+}
+
+
 //--------------------------------------------------------------------------------------------
 
-// skipping items
+// skipping items: using continue keyword
 print("\n====Skipping Items====")
 
+for i in 1...10 {
+    if i % 2 == 1 { 
+        continue    //this will skip any numbers that are odd
+    }
 
-// // infinite loops
-// print("\n====Infinite Loops====")
+    print(i)
+}
+
+
+let fibonacci = [1, 1, 2, 3, 5, 8, 13, 21]
+var position = 0
+while position <= 7 {
+	let value = fibonacci[position]
+	position += 1
+	if value < 2 {
+	   continue   //this will skip array[0] which is 1, and array[1] which is 1
+	}
+	print("Fibonacci number \(position) is \(value)")
+}
+
+
+//--------------------------------------------------------------------------------------------
+
+// infinite loops
+// to make infinite loops, just use true as condition
+print("\n====Infinite Loops====")
+
+var counter = 0
+
+while true {
+    print(" ")  //inspired by John Cage 4'33" complete of silence
+    counter += 1
+
+    if counter == 273 {  //273 seconds = 4 minutes 33 seconds
+        break
+    }
+}
 
