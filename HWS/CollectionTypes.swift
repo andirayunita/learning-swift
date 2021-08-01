@@ -1,6 +1,6 @@
-let opening = "=====The Difference between Array, Set, Tuple, and Dictionaries====="
-print(opening)
-
+print("===========================================================")
+print("The Difference between Array, Set, Tuple, and Dictionaries")
+print("===========================================================")
 // - array: ordered, can have duplicates, can be added & removed, using brackets, access numerical
 var food = ["Pizza", "Fried Chicken", "Burger"]
 print(food[0])
@@ -28,8 +28,7 @@ print(dominos)
 
 // ----------------------------------------------------------------------------------------------------------------
 
-let opening2 = "\n=====Empty Collections====="
-print(opening2)
+print("\n=====Empty Collections=====")
 
 // empty dictionaries
 var teams = [String: String]()
@@ -50,8 +49,7 @@ var result = Array<Int>()
 
 // ------------------------------------------------
 
-let opening3 = "\n=====Enumerations====="
-print(opening3)
+print("\n=====Enumerations=====")
 
 // enums: a way of defining groups of related values in a way that makes them easier to use.
 
