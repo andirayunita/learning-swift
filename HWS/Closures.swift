@@ -50,6 +50,7 @@ payment()
 // that means “accepts no parameters, and returns Void”
 print("\n====Closures as Parameters====")
 
+// Remember!
 //function has its parameter as closure that accepts no parameters and returns nothing(Void)
 
 let driving2 = {
@@ -85,4 +86,26 @@ func travel2(action: () -> Void) {
 }
 travel2 {
     print("Wait, I'm driving in my car.") 
+}
+
+
+func animate(duration: Double, animations: () -> Void) {
+    print("Starting a \(duration) second animation..")
+    animations()
+}
+animate(duration: 3) {
+    print("Fade out an image.")
+}
+
+
+func goOnVacation(to destination: String, _ activities: () -> Void) {
+	print("Packing bags...")
+	print("Getting on plane to \(destination)...")
+	activities()
+	print("Time to go home!")
+}
+goOnVacation(to: "Mexico") {
+	print("Go sightseeing")
+	print("Relax in sun")
+	print("Go hiking")
 }
