@@ -178,7 +178,20 @@ do {
 
 //--------------------------------------------------------------------------------------------
 
-// inout parameters
-// 
+// inout parameters: change the parameter inside the function, 
+// those change will reflect the original value outside the function.
 print("\n====inout Parameters====")
+
+// write inout keyword like this (parameterName: inout parameterType)
+// then make a new variable outside the function, remember! can't use constant
+// then call the function using the parameter with an ampersand, &, before its name.
+
+func doubleInPlace(anyNumber: inout Int) {
+    anyNumber *= 2
+}
+var myNum = 10
+print("The number before: \(myNum),")
+
+doubleInPlace(anyNumber: &myNum)
+print("And the number now is: \(myNum)")
 
