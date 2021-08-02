@@ -4,7 +4,6 @@ print("============================================")
 
 // creating basic closures
 // closures are like functions but written differently
-// 
 print("\n====Creating Basic Closures====")
 
 let driving = {
@@ -44,14 +43,46 @@ let payment = { () -> Bool in
 }
 payment()
 
-
 //--------------------------------------------------------------------------------------------
 
 // closures as parameters
-// print("\n====Closures as Parameters====")
+// specify the parameter type as () -> Void in a fuction,
+// that means “accepts no parameters, and returns Void”
+print("\n====Closures as Parameters====")
+
+//function has its parameter as closure that accepts no parameters and returns nothing(Void)
+
+let driving2 = {
+    print("I'm driving in my car..")
+}
+func travel(action: () -> Void) {
+    print("I'm getting ready to go!")
+    action()
+    print("I arrived!")
+}
+travel(action: driving2)
+
+
+let awesomeTalk = {
+	print("Here's a great talk!")
+}
+func deliverTalk(name: String, type: () -> Void) {
+	print("My talk is called \(name)")
+	type()
+}
+deliverTalk(name: "My Awesome Talk", type: awesomeTalk)
 
 
 //--------------------------------------------------------------------------------------------
 
 // trailing closure syntax
-// print("\n====Trailing Closure Syntax====")
+print("\n====Trailing Closure Syntax====")
+
+func travel2(action: () -> Void) {
+    print("Alright, I'm ready to go.")
+    action()
+    print("Yeay, I arrived!")
+}
+travel2 {
+    print("Wait, I'm driving in my car.") 
+}
