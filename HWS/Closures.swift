@@ -22,7 +22,7 @@ print("\n====Accepting Parameters in a Closure====")
 let driving1 = { (place: String) in
     print("I'm going to \(place) in my car!")
 }
-driving1("Jakarta")    //don't use parameters labels when running closures
+driving1("Jakarta")    //don't use parameters names when running closures
 
 //--------------------------------------------------------------------------------------------
 
@@ -36,6 +36,14 @@ let drivingWithReturn = { (place: String) -> String in
 }
 let message = drivingWithReturn("Palembang")
 print(message)
+
+// --return a value from a closure that takes no parameters
+let payment = { () -> Bool in
+    print("Paying an anonymous person..")
+    return true
+}
+payment()
+
 
 //--------------------------------------------------------------------------------------------
 
