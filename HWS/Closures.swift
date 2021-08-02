@@ -1,5 +1,8 @@
 print("============================================")
 print("\t\t\t\t  Closures")
+// closures means: create a function, and assign it to a variable,
+// call that function using that variable, 
+// and even pass that function into other functions as parameter. 
 print("============================================")
 
 // creating basic closures
@@ -21,7 +24,7 @@ print("\n====Accepting Parameters in a Closure====")
 let driving1 = { (place: String) in
     print("I'm going to \(place) in my car!")
 }
-driving1("Jakarta")    //don't use parameters names when running closures
+driving1("Jakarta")    //don't use parameters names/labels when running closures
 
 //--------------------------------------------------------------------------------------------
 
@@ -46,22 +49,22 @@ payment()
 //--------------------------------------------------------------------------------------------
 
 // closures as parameters
-// specify the parameter type as () -> Void in a fuction,
+// to assign the closure as parameters in a function: 
+// first, specify the parameter type as () -> Void in a fuction,
 // that means “accepts no parameters, and returns Void”
 print("\n====Closures as Parameters====")
 
-// Remember!
-//function has its parameter as closure that accepts no parameters and returns nothing(Void)
-
-let driving2 = {
+let driving2 = {  //this is driving closure
     print("I'm driving in my car..")
 }
 func travel(action: () -> Void) {
     print("I'm getting ready to go!")
-    action()
+    action()    //this is action closure
     print("I arrived!")
 }
 travel(action: driving2)
+// lines 65: this function has its closure as parameter now, 
+// before, that function accepts no parameters(lines 60) and returns nothing(Void)
 
 
 let awesomeTalk = {
@@ -77,6 +80,8 @@ deliverTalk(name: "My Awesome Talk", type: awesomeTalk)
 //--------------------------------------------------------------------------------------------
 
 // trailing closure syntax
+// if the last parameter(in a function) is a closure, 
+// we can use special syntax, which is trailing closure
 print("\n====Trailing Closure Syntax====")
 
 func travel2(action: () -> Void) {
@@ -84,16 +89,16 @@ func travel2(action: () -> Void) {
     action()
     print("Yeay, I arrived!")
 }
-travel2 {
+travel2 {  //we can call travel2() function like this, using trailing closure
     print("Wait, I'm driving in my car.") 
 }
 
 
-func animate(duration: Double, animations: () -> Void) {
+func animate(duration: Double, animations: () -> Void) {  //last parameter in this function, is pemanggilan closure
     print("Starting a \(duration) second animation..")
-    animations()
+    animations()  //this is animations closure
 }
-animate(duration: 3) {
+animate(duration: 3) {  //this is trailing closure, and we can ignore the animations parameter
     print("Fade out an image.")
 }
 
@@ -109,3 +114,21 @@ goOnVacation(to: "Mexico") {
 	print("Relax in sun")
 	print("Go hiking")
 }
+
+
+//--------------------------------------------------------------------------------------------
+
+// using closures as parameters when they accept parameters
+print("\n==Closures as Parameters when They Accept Parameters==")
+
+// using closures as parameters when they return values
+
+// shorthand parameter names
+
+// closures with multiple parameters
+
+// returning closures from functions
+
+// capturing values
+
+
