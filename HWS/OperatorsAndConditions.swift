@@ -212,4 +212,5 @@ switch yourScore {
 
 
 var myFlowers = ["Roses", "Sunflowers", "White Roses", "Baby's-Breath"]
-print(myFlowers[1...])1
+print(myFlowers[1...])
+
