@@ -501,8 +501,8 @@ func createAgeValidator(strict: Bool) -> (Int) -> Bool {
 		return false
 	}
 }
-let validator = createAgeValidator(strict: true)
-validator(21)
+let validator2 = createAgeValidator(strict: true)
+validator2(21)
 
 
 func visitPlaces() -> (String) -> Void {
