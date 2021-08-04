@@ -313,10 +313,10 @@ func travel7() -> (String) -> Void {
         print("I'm going to \($0)")
     }
 }
-let result = travel7()
-result("France")
+let result2 = travel7()
+result2("France")
 
-let result2 = travel7()("Hawaii")   // this is allowable but not recommended.
+// let result3 = travel7()("Hawaii")   // this is allowable but not recommended.
 
 //lines 311, travel7() function accepts no parameters and returns a closure, 
 // the closure will be returned must be called a String and will return nothing(Void).
@@ -406,7 +406,130 @@ print(doubler(2))
 //--------------------------------------------------------------------------------------------
 
 // capturing values
-// print("\n==Capturing Values==")
+// external value will be captured
+print("\n==Capturing Values==")
+
+func travel8() -> (String) -> Void {
+    var counter = 1   //external value
+
+    return {
+        print("\(counter). I'm going to \($0)..")
+        counter += 1
+    }
+}
+let result4 = travel8()
+result4("New Zealand")
+result4("New Zealand")
+result4("New Zealand")
 
 
+func makeRandomNumbersGenerator() -> () -> Int {
+    var previousNumber = 0
 
+    return {
+        var newNumber: Int
+
+        repeat {
+            newNumber = Int.random(in: 1...3)
+        } while newNumber == previousNumber
+
+        previousNumber = newNumber
+        return newNumber
+    }
+}
+let generators = makeRandomNumbersGenerator()
+for _ in 1...10 {
+    print(generators())
+}
+
+
+func makeAdder() -> (Int) -> Void {
+	var sum = 0
+	return {
+		sum += $0
+		print("Sum is now \(sum)")
+	}
+}
+let adder = makeAdder()
+adder(5)
+adder(3)
+
+
+func swingBat() -> () -> Void {
+	var strikes = 0
+	return {
+		strikes += 1
+		if strikes >= 3 {
+			print("You're out!")
+		} else {
+			print("Strike \(strikes)")
+		}
+	}
+}
+let swing = swingBat()
+swing()
+swing()
+swing()
+
+
+func storeTwoValues(value1: String, value2: String) -> (String) -> String {
+	var previous = value1
+	var current = value2
+	return { new in
+		let removed = previous
+		previous = current
+		current = new
+		return "Removed \(removed)"
+	}
+}
+let store = storeTwoValues(value1: "Hello", value2: "World")
+let removed = store("Value Three")
+print(removed)
+
+
+func createAgeValidator(strict: Bool) -> (Int) -> Bool {
+	return {
+		if strict {
+			if $0 >= 21 {
+				return true
+			}
+		} else {
+			if $0 >= 18 {
+				return true
+			}
+		}
+		return false
+	}
+}
+let validator = createAgeValidator(strict: true)
+validator(21)
+
+
+func visitPlaces() -> (String) -> Void {
+	var places = [String: Int]()
+	return {
+		places[$0, default: 0] += 1
+		let timesVisited = places[$0, default: 0]
+		print("Number of times I've visited \($0): \(timesVisited).")
+	}
+}
+let visit = visitPlaces()
+visit("London")
+visit("New York")
+visit("London")
+
+
+func summonGenie(wishCount: Int) -> (String) -> Void {
+	var currentWishes = wishCount
+	return {
+		if currentWishes > 0 {
+			currentWishes -= 1
+			print("You wished for \($0).")
+			print("Wishes left: \(currentWishes)")
+		} else {
+			print("You're out of wishes.")
+		}
+	}
+}
+let genie = summonGenie(wishCount: 3)
+genie("a Ferrari")
