@@ -232,3 +232,18 @@ toys.firstIndex(of: "Buzz")  //locate any item inside array
 print(toys.sorted())         //sort the items in an array alpabhetically
 toys.remove(at: 0)           //remove item in an array
 //arrays have lot of properties and methods, try to type toys. to find out more in xcode
+
+
+//--------------------------------------------------------------------------------------------
+
+// initializers
+
+// referring to current instance
+
+// lazy properties
+
+// static properties and methods
+
+// access control
+
+
