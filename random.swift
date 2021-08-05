@@ -1,5 +1,5 @@
 // -----------------------------------------
-print("SOAL-SOAL ALGORITMA") 
+//print("SOAL-SOAL ALGORITMA")
 // -----------------------------------------
 
 // let phi: Double = 3.14
@@ -34,22 +34,22 @@ print("SOAL-SOAL ALGORITMA")
 
 // -----------------------------------------
 
-print("Alas = "); let alasInput = readLine()
-print("Tinggi = "); let tinggiInput = readLine()
-
-// ubah string ke int
-if let alas = Int(alasInput ?? "0"), let tinggi = Int(tinggiInput ?? "0") {
-    let keliling = 2 * (alas + tinggi)
-    let luas = alas * tinggi
-    
-    print("Alas = \(alas)")
-    print("Tinggi = \(tinggi)")
-    print("Keliling = \(keliling)")
-    print("Luas = \(luas)")
-    
-} else {
-    print("Input tidak valid.")
-}
+//print("Alas = "); let alasInput = readLine()
+//print("Tinggi = "); let tinggiInput = readLine()
+//
+//// ubah string ke int
+//if let alas = Int(alasInput ?? "0"), let tinggi = Int(tinggiInput ?? "0") {
+//    let keliling = 2 * (alas + tinggi)
+//    let luas = alas * tinggi
+//
+//    print("Alas = \(alas)")
+//    print("Tinggi = \(tinggi)")
+//    print("Keliling = \(keliling)")
+//    print("Luas = \(luas)")
+//
+//} else {
+//    print("Input tidak valid.")
+//}
 
 // -----------------------------------------
 
