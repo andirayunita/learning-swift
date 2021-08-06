@@ -100,7 +100,6 @@ struct FishTank {
 //--------------------------------------------------------------------------------------------
 
 // Methods: belongs to a type such as struct, enum, classes
-
 print("\n====Methods====")
 
 struct City {
@@ -213,10 +212,10 @@ let joke = "What's red and smells like blue paint? Red paint."
 print(joke.count > 10)
 
 let song = "Shake it Off"
-print(song.uppercased().contains("SHAKE"))
+// print(song.uppercased().contains("SHAKE"))
 
 let quote = "Time is an illusion. Lunchtime doubly so."
-print(quote.contains("Lunch"))
+// print(quote.contains("Lunch"))
 
 
 //--------------------------------------------------------------------------------------------
@@ -228,7 +227,7 @@ print("\n====Properties and Methods of Arrays====")
 var toys = ["Woody"]
 print(toys.count)            //read number of items in an array
 toys.append("Buzz")          //add new item into an array
-toys.firstIndex(of: "Buzz")  //locate any item inside array
+// toys.firstIndex(of: "Buzz")  //locate any item inside array
 print(toys.sorted())         //sort the items in an array alpabhetically
 toys.remove(at: 0)           //remove item in an array
 //arrays have lot of properties and methods, try to type toys. to find out more in xcode
@@ -236,14 +235,284 @@ toys.remove(at: 0)           //remove item in an array
 
 //--------------------------------------------------------------------------------------------
 
-// initializers
+// initializers: using init keyword
+// don't write func before init
+// all properties must have a value before initializers ends
+print("\n====Initializers====")
+
+struct User {
+	var username: String
+
+	init() {      //this initializers accepts no parameters
+		username = "Anonymous"
+		print("Creating a new user!")
+	}
+}
+var user = User()
+user.username = "twostraws"
+
+/* this is Swift's memberwise intilizer
+struct Employee {
+	var name: String
+	var yearActive = 0
+}
+let roslin = Employee(name: "Laura Roslin")
+let andira = Employee(name: "Andira Yunita", yearActive: 2)
+print(roslin.name)
+print(andira.name, andira.yearActive)
+*/
+struct Employee {
+	var name: String
+	var yearActive = 0
+}
+extension Employee {
+	init() {
+		self.name = "Anonymous"
+		print("Creating an anonymous employee.....")
+	}
+}
+let roslin = Employee(name: "Laura Roslin")  //creating name employee now works,
+let anon = Employee()    //as does creating an anonymous employee
+print(roslin.name, roslin.yearActive)
+print(anon)
+
+
+struct Experiment {
+	var cost = 0
+}
+let lhc = Experiment(cost: 13_250_000_000)
+
+
+struct Dictionary {
+	var words = Set<String>()
+}
+let dictionary = Dictionary()
+
+
+struct Country {
+	var name: String
+	var usesImperialMeasurements: Bool
+	init(countryName: String) {
+		name = countryName
+		let imperialCountries = ["Liberia", "Myanmar", "USA"]
+		if imperialCountries.contains(name) {
+			usesImperialMeasurements = true
+		} else {
+			usesImperialMeasurements = false
+		}
+	}
+}
+
+
+struct Message {
+	var from: String
+	var to: String
+	var content: String
+	init() {
+		from = "Unknown"
+		to = "Unknown"
+		content = "Yo"
+	}
+}
+let message = Message()
+
+
+struct Cabinet {
+	var height: Double
+	var width: Double
+	var area: Double
+	init (itemHeight: Double, itemWidth: Double) {
+		height = itemHeight
+		width = itemWidth
+		area = height * width
+	}
+}
+let drawers = Cabinet(itemHeight: 1.4, itemWidth: 1.0)
+
+
+//--------------------------------------------------------------------------------------------
 
 // referring to current instance
+// using self. keyword
+print("\n====Referring to Current Instance====")
 
-// lazy properties
+struct Person2 {
+	var name: String
 
-// static properties and methods
+	init(name: String) {
+		print("\(name) was born!")
+		self.name = name   //self.name refers to property, name refers to init parameter
+	}
+}
+var liam = Person2(name: "Liam")
 
-// access control
 
+struct SuperHero {
+	var nickname: String
+	var powers: [String]
+	init(nickname: String, superPowers: [String]) {
+		self.nickname = nickname
+		self.powers = superPowers
+	}
+}
+let batman = SuperHero(nickname: "The Caped Crusader", superPowers: ["He's really rich"])
+
+
+struct Character {
+	var name: String
+	var actor: String
+	var probablyGoingToDie: Bool
+	init(name: String, actor: String) {
+		self.name = name
+		self.actor = actor
+		if self.actor == "Sean Bean" {
+			probablyGoingToDie = true
+		} else {
+			probablyGoingToDie = false
+		}
+	}
+}
+
+
+struct Cottage {
+	var rooms: Int
+	var rating = 5
+	init(rooms: Int) {
+		self.rooms = rooms
+	}
+}
+let bailbrookHouse = Cottage(rooms: 4)
+
+
+//--------------------------------------------------------------------------------------------
+
+// lazy properties: created when only first accessed
+// using lazy keyword
+print("\n====Lazy Properties====")
+
+struct FamilyTree {
+	init() {
+		print("Creating family tree!")
+	}
+}
+struct Person3 {
+	var names: String
+	lazy var familyTree = FamilyTree()
+
+	init(names: String) {
+		self.names = names
+	}
+}
+var ine = Person3(names: "Ine")
+print(ine.familyTree)
+print(ine.familyTree)
+
+//--------------------------------------------------------------------------------------------
+
+// static properties and methods: using static keyword
+// share properties and methods accross all instances of struct
+print("\n====Static Properties and Methods====")
+
+struct Student {
+	static var classSize = 0
+	var name2: String
+
+	init(name2: String) {
+		self.name2 = name2
+		Student.classSize += 1
+	}
+}
+let andira = Student(name2: "andira")
+let syauqi = Student(name2: "syauqi")
+print(Student.classSize)
+//lines 427: classSize belongs to struct itself(Student struct) rather than instance of struct
+// so called it struct.staticProperty
+
+
+struct NewsStory {
+	static var breakingNewsCount = 0
+	static var regularNewsCount = 0
+	var headline: String
+	init(headline: String, isBreaking: Bool) {
+		self.headline = headline
+		if isBreaking {
+			NewsStory.breakingNewsCount += 1
+		} else {
+			NewsStory.regularNewsCount += 1
+		}
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------
+
+// access control: using public keyword or private keyword
+// private: restrict read/write property anywhere outside the struct
+// public: lets all other code use the property or method.
+print("\n====Access Control====")
+
+struct Person4 {
+	private var id: String
+
+	init(id: String) {
+		self.id = id
+	}
+
+	func identity() -> String {
+		return "My social number security is \(id)."
+	}
+}
+
+struct Person {
+	private var socialSecurityNumber: String
+	init(ssn: String) {
+		socialSecurityNumber = ssn
+	}
+}
+let sarah = Person(ssn: "555-55-5555")
+
+
+struct Office {
+	private var passCode: String
+	var address: String
+	var employees: [String]
+	init(address: String, employees: [String]) {
+		self.address = address
+		self.employees = employees
+		self.passCode = "SEKRIT"
+	}
+}
+let monmouthStreet = Office(address: "30 Monmouth St", employees: ["Paul Hudson"])
+
+
+struct School {
+	var staffNames: [String]
+	private var studentNames: [String]
+	init(staff: String...) {
+		self.staffNames = staff
+		self.studentNames = [String]()
+	}
+}
+let royalHigh = School(staff: "Mrs Hughes")
+
+
+struct Customer {
+	var name: String
+	private var creditCardNumber: Int
+	init(name: String, creditCard: Int) {
+		self.name = name
+		self.creditCardNumber = creditCard
+	}
+}
+let lottie = Customer(name: "Lottie Knights", creditCard: 1234567890)
+
+
+struct App {
+	var name: String
+	private var sales = 0
+	init(name: String) {
+		self.name = name
+	}
+}
+let spotify = App(name: "Spotify")
 
