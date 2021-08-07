@@ -186,6 +186,27 @@ struct Bicycle {
 	}
 }
 
+
+struct Code {
+	var numberOfBugs = 100
+	mutating func fixBug() {
+		numberOfBugs += 3
+	}
+}
+var code = Code()
+code.fixBug()
+
+
+struct Barbecue {
+	var charcoalBricks = 20
+	mutating func addBricks(_ number: Int) {
+		charcoalBricks += number
+	}
+}
+var barbecue = Barbecue()
+barbecue.addBricks(4)
+
+
 //--------------------------------------------------------------------------------------------
 
 // properties and methods of strings
@@ -463,13 +484,13 @@ struct Person4 {
 	}
 }
 
-struct Person {
+struct Person5 {
 	private var socialSecurityNumber: String
 	init(ssn: String) {
-		socialSecurityNumber = ssn
+		self.socialSecurityNumber = ssn
 	}
 }
-let sarah = Person(ssn: "555-55-5555")
+let sarah = Person5(ssn: "555-55-5555")
 
 
 struct Office {
@@ -494,7 +515,7 @@ struct School {
 	}
 }
 let royalHigh = School(staff: "Mrs Hughes")
-
+print(royalHigh.staffNames)
 
 struct Customer {
 	var name: String
@@ -515,4 +536,4 @@ struct App {
 	}
 }
 let spotify = App(name: "Spotify")
-
+print(spotify.name)
