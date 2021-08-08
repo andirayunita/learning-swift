@@ -32,7 +32,7 @@ print(harry.position)
 
 // computed properties: a property that runs code to figure it out its values
 // constant cannot be computed property
-// computed property: class, structure, enumerations
+// computed property: class, structure, enumerations, extensions
 print("\n====Computed Properties====")
 
 struct Sport2 {
